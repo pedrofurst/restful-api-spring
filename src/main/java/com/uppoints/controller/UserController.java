@@ -1,4 +1,4 @@
-package com.uppoints;
+package com.uppoints.controller;
 
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
