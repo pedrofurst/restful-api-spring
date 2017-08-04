@@ -55,7 +55,7 @@ public class UserController {
 
 	@PostMapping
 	public ResponseEntity<User> save(@RequestBody User user, UriComponentsBuilder ucBuilder) {
-		LOGGER.info("Saving User : {}", user);
+		LOGGER.info("Saving User: {}", user);
 		User saved = service.save(user);
 		return ResponseEntity.created(ucBuilder.path("/users/{id}").buildAndExpand(saved.getId()).toUri()).build();
 	}
