@@ -5,7 +5,6 @@ import java.util.List;
 import com.uppoints.model.User;
 
 public interface UserService {
-
 	
 	List<User> list();
 	
