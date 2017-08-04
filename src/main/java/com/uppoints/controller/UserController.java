@@ -66,7 +66,7 @@ public class UserController {
 		return ResponseEntity.ok(user);
 	}
 
-	@DeleteMapping
+	@DeleteMapping("{id}")
 	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
 		LOGGER.info("Fetching & Deleting User with id {}", id);
 		User user = service.getUser(id);
