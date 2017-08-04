@@ -24,9 +24,9 @@ import com.uppoints.service.UserService;
 
 import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("users")
-@AllArgsConstructor
 public class UserController {
 
 	public static final Logger LOGGER = LoggerFactory.getLogger( UserController.class );
