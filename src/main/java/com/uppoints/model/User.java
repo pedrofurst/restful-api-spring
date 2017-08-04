@@ -12,6 +12,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @AllArgsConstructor
 @Builder
@@ -20,6 +21,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "users")
+@ToString
 public class User implements Serializable {
 
 	private static final long serialVersionUID = -3443964045741576999L;

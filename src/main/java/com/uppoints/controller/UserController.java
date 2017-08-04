@@ -44,10 +44,11 @@ public class UserController {
 	@GetMapping("{id}")
 	public ResponseEntity<?> findById(@PathVariable("id") Long id) {
 		LOGGER.info("Fetching User with id {}", id);
-		User user = service.getUser(id);
+		User user = service.fetch(id);
 		if (user == null) {
-			LOGGER.error("User with id {} not found.", id);
-			return new ResponseEntity<CustomError>(new CustomError("User with id " + id + " not found"), NOT_FOUND);
+			String errorMessage = String.format("User with id %s not found.",id); 
+			LOGGER.error(errorMessage);
+			return new ResponseEntity<CustomError>(new CustomError(errorMessage), NOT_FOUND);
 		}
 		return ResponseEntity.ok(user);
 	}
@@ -68,8 +69,8 @@ public class UserController {
 
 	@DeleteMapping("{id}")
 	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
-		LOGGER.info("Fetching & Deleting User with id {}", id);
-		User user = service.getUser(id);
+		LOGGER.info("Deleting User with id {}", id);
+		User user = service.fetch(id);
 		if (user == null) {
 			LOGGER.error("Unable to delete. User with id {} not found.", id);
 			return new ResponseEntity<CustomError>(new CustomError("Unable to delete. User with id " + id + " not found."), NOT_FOUND);

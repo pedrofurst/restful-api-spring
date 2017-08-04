@@ -8,7 +8,7 @@ public interface UserService {
 	
 	List<User> list();
 	
-	User getUser(Long id);
+	User fetch(Long id);
 	
 	User save(User user);
 	

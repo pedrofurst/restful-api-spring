@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User getUser(Long id) {
+	public User fetch(Long id) {
 		return repository.findOne(id);
 	}
 
